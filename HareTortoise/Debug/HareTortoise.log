@@ -1,0 +1,25 @@
+﻿  main.c
+C:\Users\cjbas\Desktop\Programming Assignments\HareTortoise\HareTortoise\main.c(16,18): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\cjbas\Desktop\Programming Assignments\HareTortoise\HareTortoise\main.c(19,17): warning C4047: '=': 'char' differs in levels of indirection from 'char *'
+C:\Users\cjbas\Desktop\Programming Assignments\HareTortoise\HareTortoise\main.c(23,49): warning C4047: '<': 'int' differs in levels of indirection from 'char *'
+C:\Users\cjbas\Desktop\Programming Assignments\HareTortoise\HareTortoise\main.c(24,41): warning C4047: 'function': 'char *' differs in levels of indirection from 'char'
+C:\Users\cjbas\Desktop\Programming Assignments\HareTortoise\HareTortoise\main.c(24,41): warning C4024: 'moveTortoise': different types for formal and actual parameter 2
+C:\Users\cjbas\Desktop\Programming Assignments\HareTortoise\HareTortoise\main.c(24,53): warning C4047: '=': 'char' differs in levels of indirection from 'char *'
+C:\Users\cjbas\Desktop\Programming Assignments\HareTortoise\HareTortoise\main.c(25,33): warning C4047: 'function': 'char *' differs in levels of indirection from 'char'
+C:\Users\cjbas\Desktop\Programming Assignments\HareTortoise\HareTortoise\main.c(25,33): warning C4024: 'moveHare': different types for formal and actual parameter 2
+C:\Users\cjbas\Desktop\Programming Assignments\HareTortoise\HareTortoise\main.c(25,49): warning C4047: 'function': 'int *' differs in levels of indirection from 'int'
+C:\Users\cjbas\Desktop\Programming Assignments\HareTortoise\HareTortoise\main.c(25,49): warning C4024: 'moveHare': different types for formal and actual parameter 4
+C:\Users\cjbas\Desktop\Programming Assignments\HareTortoise\HareTortoise\main.c(26,29): warning C4047: 'function': 'char *' differs in levels of indirection from 'char'
+C:\Users\cjbas\Desktop\Programming Assignments\HareTortoise\HareTortoise\main.c(26,29): warning C4024: 'print': different types for formal and actual parameter 3
+C:\Users\cjbas\Desktop\Programming Assignments\HareTortoise\HareTortoise\main.c(26,54): warning C4047: 'function': 'int *' differs in levels of indirection from 'int'
+C:\Users\cjbas\Desktop\Programming Assignments\HareTortoise\HareTortoise\main.c(26,54): warning C4024: 'print': different types for formal and actual parameter 6
+C:\Users\cjbas\Desktop\Programming Assignments\HareTortoise\HareTortoise\main.c(28,21): warning C4047: '>': 'char *' differs in levels of indirection from 'int'
+C:\Users\cjbas\Desktop\Programming Assignments\HareTortoise\HareTortoise\main.c(69,14): warning C4047: 'function': 'const char *const ' differs in levels of indirection from 'int'
+C:\Users\cjbas\Desktop\Programming Assignments\HareTortoise\HareTortoise\main.c(69,14): warning C4024: 'printf': different types for formal and actual parameter 1
+C:\Users\cjbas\Desktop\Programming Assignments\HareTortoise\HareTortoise\main.c(71,14): warning C4047: 'function': 'const char *const ' differs in levels of indirection from 'int'
+C:\Users\cjbas\Desktop\Programming Assignments\HareTortoise\HareTortoise\main.c(71,14): warning C4024: 'printf': different types for formal and actual parameter 1
+C:\Users\cjbas\Desktop\Programming Assignments\HareTortoise\HareTortoise\main.c(73,22): warning C4047: 'function': 'const char *const ' differs in levels of indirection from 'char'
+C:\Users\cjbas\Desktop\Programming Assignments\HareTortoise\HareTortoise\main.c(73,22): warning C4024: 'printf': different types for formal and actual parameter 1
+C:\Users\cjbas\Desktop\Programming Assignments\HareTortoise\HareTortoise\main.c(82,14): warning C4047: 'function': 'const char *const ' differs in levels of indirection from 'int'
+C:\Users\cjbas\Desktop\Programming Assignments\HareTortoise\HareTortoise\main.c(82,14): warning C4024: 'printf': different types for formal and actual parameter 1
+  HareTortoise.vcxproj -> C:\Users\cjbas\Desktop\Programming Assignments\HareTortoise\HareTortoise\Debug\HareTortoise.exe
