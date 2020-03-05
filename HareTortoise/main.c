@@ -2,6 +2,8 @@
 #include <time.h> //To seed random numbers
 #include <stdlib.h> //For random numbers
 
+#define MAX 60;
+
 //Prototypes
 char* moveTortoise(char*, char*, int*);
 char* moveHare(char*, char*, int*, int*);
@@ -9,9 +11,10 @@ void print(char*, char*, char*, int, int*, int*);
 
 void main() {
 	char path[] = " R  R  R  SSSSS   R  R CCCC  R   R   CCCCCCCCCC  R  SSSS  R "; //The path that the hare/tortoise will navigate
-	char* hare, tortoise; //Hare & Tortoise pointers that will point to something inside of path
+	char* hare;
+	char* tortoise; //Hare & Tortoise pointers that will point to something inside of path
 	int turnNum = 0; //Keeps track of the turn we are on
-	int* collision = 0, nap = 0; //Booleans to track if there was a collision or if the hare is napping
+	int collision = 0, nap = 0; //Booleans to track if there was a collision or if the hare is napping
 	
 	srand(time(NULL));
 
@@ -21,9 +24,10 @@ void main() {
 	//while hare and tortoise are still in path,
 	//each animal takes its turn then a summary is outputted
 	while (hare < path + 60 && tortoise < path + 60) {
-		tortoise = moveTortoise(hare, tortoise, collision);
-		hare = moveHare(hare, tortoise, collision, nap);
-		print(path, hare, tortoise, turnNum, collision, nap);
+		tortoise = moveTortoise(hare, tortoise, &collision);
+		hare = moveHare(hare, tortoise, &collision, &nap);
+		print(path, hare, tortoise, turnNum, &collision, &nap);
+		turnNum++;
 	}
 	if (hare > tortoise)
 		printf("Hare wins!");
@@ -56,30 +60,34 @@ char* moveHare(char* hare, char* tortoise, int* collision, int *nap) {
 		while (*hare == 'S' || *hare == 'R') {
 			hare--;
 		}
+		if (hare == tortoise) {
+			hare--;
+			*collision = 1;
+		}
 	}
 	return hare;
 }
 
 void print(char* path, char* hare, char* tortoise, int turnNum, int* collision, int* nap) {
 	char* pathLooper;
-	printf("Turn: %4d-: ", turnNum);
+	printf("Turn: %3d: ", turnNum);
 	pathLooper = path;
 	while (*pathLooper != '\0') {
 		if (pathLooper == hare)
-			printf('H');
+			printf("H");
 		if (pathLooper == tortoise)
-			printf('T');
+			printf("T");
 		else
-			printf(*pathLooper);
-		if (collision) {
-			printf(" -collision- ");
-			*collision = 0;
-		}
-		if (nap) {
-			printf(" -hare napping- ");
-			*nap = 0;
-		}
-		printf('\n');
+			printf("%c", *pathLooper);
 		pathLooper++;
 	}
+	if (collision) {
+		printf(" -collision- ");
+		*collision = 0;
+	}
+	if (nap) {
+		printf(" -hare napping- ");
+		*nap = 0;
+	}
+	printf("\n");
 }
