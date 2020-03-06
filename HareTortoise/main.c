@@ -13,16 +13,18 @@ void main() {
 	char path[] = " R  R  R  SSSSS   R  R CCCC  R   R   CCCCCCCCCC  R  SSSS  R "; //The path that the hare/tortoise will navigate
 	char* hare;
 	char* tortoise; //Hare & Tortoise pointers that will point to something inside of path
-	int turnNum = 0; //Keeps track of the turn we are on
+	int turnNum = 1; //Keeps track of the turn we are on
 	int collision = 0, nap = 0; //Booleans to track if there was a collision or if the hare is napping
 	
-	srand(time(NULL));
+	srand(time(NULL)); //Seed random # generator
 
 	hare = path;
 	tortoise = path;
 
 	//while hare and tortoise are still in path,
 	//each animal takes its turn then a summary is outputted
+	print(path, hare, tortoise, turnNum, &collision, &nap); //Prints out initial set up before everything runs
+	turnNum++;
 	while (hare < path + 60 && tortoise < path + 60) {
 		tortoise = moveTortoise(hare, tortoise, &collision);
 		hare = moveHare(hare, tortoise, &collision, &nap);
@@ -73,19 +75,23 @@ void print(char* path, char* hare, char* tortoise, int turnNum, int* collision, 
 	printf("Turn: %3d: ", turnNum);
 	pathLooper = path;
 	while (*pathLooper != '\0') {
-		if (pathLooper == hare)
+		if (pathLooper == hare == tortoise) { //For when they are on top of each other like beginning
+			printf("HT");
+			pathLooper += 2;
+		}
+		else if (pathLooper == hare)
 			printf("H");
-		if (pathLooper == tortoise)
+		else if (pathLooper == tortoise)
 			printf("T");
 		else
 			printf("%c", *pathLooper);
 		pathLooper++;
 	}
-	if (collision) {
+	if (*collision) {
 		printf(" -collision- ");
 		*collision = 0;
 	}
-	if (nap) {
+	if (*nap) {
 		printf(" -hare napping- ");
 		*nap = 0;
 	}
